@@ -43,6 +43,7 @@ func (t *Response) WrapResult(result string) {
 type Responce struct {
 	Code           string `json:"code"`
 	QueryResultStr string `json:"getResult"`
+	Data           Data   `json:"data"`
 	QueryResult    QueryResult
 }
 
@@ -51,4 +52,9 @@ type QueryResult struct {
 	Code      int64  `json:"code"`
 	Message   string `json:"message"`
 	RequestID string `json:"requestId"`
+}
+
+type Data struct {
+	ClickURL string `json:"clickURL"`
+	ShortURL string `json:"shortURL"`
 }
